@@ -9,11 +9,7 @@ export const OrderDetailsUI: FC<OrderDetailsUIProps> = ({ orderNumber }) => (
       {orderNumber}
     </h2>
     <p className='text text_type_main-medium'>идентификатор заказа</p>
-    <img
-      className={styles.img}
-      src={doneImg}
-      alt='Статус выполнения заказа'
-    />
+    <img className={styles.img} src={doneImg} alt='Статус выполнения заказа' />
     <p className='text text_type_main-default mb-1'>
       Ваш заказ начали готовить
     </p>

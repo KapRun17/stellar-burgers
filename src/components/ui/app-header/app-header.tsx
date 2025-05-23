@@ -11,7 +11,8 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 
 export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName }) => {
   const pathname = useLocation().pathname;
-  const constructorPath = pathname.startsWith('/ingredients/') || pathname === '/' ? pathname : '/';
+  const constructorPath =
+    pathname.startsWith('/ingredients/') || pathname === '/' ? pathname : '/';
 
   return (
     <header className={styles.header}>
@@ -24,7 +25,9 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName }) => {
             }
           >
             <BurgerIcon type='primary' />
-            <p className='text text_type_main-default ml-2 mr-10'>Конструктор</p>
+            <p className='text text_type_main-default ml-2 mr-10'>
+              Конструктор
+            </p>
           </NavLink>
           <NavLink
             to='/feed'
@@ -43,7 +46,7 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName }) => {
               `text text_type_main-medium text-primary-color pt-4 pb-4 ${styles.link} ${isActive ? styles.link_active : ''}`
             }
           >
-            <Logo />
+            <Logo className={''} />
           </NavLink>
         </div>
         <div className={styles.link_position_last}>

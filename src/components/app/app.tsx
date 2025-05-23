@@ -9,7 +9,7 @@ import {
   Profile,
   ProfileOrders,
   Register,
-  ResetPassword,
+  ResetPassword
 } from '@pages';
 import { AppHeader, IngredientDetails, Modal, OrderInfo } from '@components';
 import { ProtectedRoute } from '../protected-route/protected-route';

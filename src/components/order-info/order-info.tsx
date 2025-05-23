@@ -19,7 +19,7 @@ export const OrderInfo: FC = () => {
   useEffect(() => {
     dispatch(getOrderByNumber(number));
   }, []);
-  
+
   const orderInfo = useMemo(() => {
     if (!orderData || !ingredients.length) return null;
 

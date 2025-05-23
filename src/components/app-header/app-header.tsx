@@ -7,5 +7,5 @@ export const AppHeader: FC = () => {
   const { userData } = useSelector(getUserState);
   const userName = userData?.name || '';
 
-  return <AppHeaderUI userName={userName} />;
+  return <AppHeaderUI userName={userName ?? ''} />;
 };

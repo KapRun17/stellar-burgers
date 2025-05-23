@@ -11,7 +11,7 @@ import { BurgerConstructorElement, Modal } from '@components';
 import { Preloader, OrderDetailsUI } from '@ui';
 
 export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
-  constructorItems: burgerItems,
+  burgerConstructor: burgerItems,
   orderRequest,
   price,
   orderModalData: orderInfo,
@@ -30,23 +30,29 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
         />
       </div>
     ) : (
-      <div className={`${styles.noBuns} ${styles.noBunsTop} ml-8 mb-4 mr-5 text text_type_main-default`}>
+      <div
+        className={`${styles.noBuns} ${styles.noBunsTop} ml-8 mb-4 mr-5 text text_type_main-default`}
+      >
         Выберите булки
       </div>
     )}
 
     <ul className={styles.elements}>
       {burgerItems.ingredients.length > 0 ? (
-        burgerItems.ingredients.map((ingredient: TConstructorIngredient, index: number) => (
-          <BurgerConstructorElement
-            ingredient={ingredient}
-            index={index}
-            totalItems={burgerItems.ingredients.length}
-            key={ingredient.id}
-          />
-        ))
+        burgerItems.ingredients.map(
+          (ingredient: TConstructorIngredient, index: number) => (
+            <BurgerConstructorElement
+              ingredient={ingredient}
+              index={index}
+              totalItems={burgerItems.ingredients.length}
+              key={ingredient.id}
+            />
+          )
+        )
       ) : (
-        <div className={`${styles.noBuns} ml-8 mb-4 mr-5 text text_type_main-default`}>
+        <div
+          className={`${styles.noBuns} ml-8 mb-4 mr-5 text text_type_main-default`}
+        >
           Выберите начинку
         </div>
       )}
@@ -63,7 +69,9 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
         />
       </div>
     ) : (
-      <div className={`${styles.noBuns} ${styles.noBunsBottom} ml-8 mb-4 mr-5 text text_type_main-default`}>
+      <div
+        className={`${styles.noBuns} ${styles.noBunsBottom} ml-8 mb-4 mr-5 text text_type_main-default`}
+      >
         Выберите булки
       </div>
     )}
