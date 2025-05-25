@@ -16,6 +16,7 @@ import { TOrder, TUser } from '@utils-types';
 type TUserState = {
   request: boolean;
   error: string | null;
+  response: TUser | null;
   updatedUserData: TUser | null;
   registerData: TRegisterData | null;
   userData: TUser | null;
@@ -28,6 +29,7 @@ type TUserState = {
 export const initialState: TUserState = {
   request: false,
   error: null,
+  response: null,
   updatedUserData: null,
   registerData: null,
   userData: null,
@@ -106,9 +108,9 @@ export const userSlice = createSlice({
         state.isAuthChecked = false;
       })
       .addCase(registerUser.fulfilled, (state, action) => {
-        state.request = false;
-        state.error = null;
-        state.updatedUserData = action.payload.user;
+        (state.request = false),
+          (state.error = null),
+          (state.response = action.payload.user);
         state.userData = action.payload.user;
         state.isAuthChecked = false;
         state.isAuthenticated = true;
@@ -162,9 +164,9 @@ export const userSlice = createSlice({
         state.error = action.error.message ?? 'Update failed';
       })
       .addCase(updateUser.fulfilled, (state, action) => {
-        state.request = false;
-        state.error = null;
-        state.updatedUserData = action.payload.user;
+        (state.request = false),
+          (state.error = null),
+          (state.response = action.payload.user);
       })
 
       // Выход
